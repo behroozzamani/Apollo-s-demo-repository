@@ -1,0 +1,21 @@
+---
+name: "task1_workflow"
+dataIns:
+- name: "original"
+  type: "string"
+  source: "original"
+workflowBody:
+- function:
+    name: "splited"
+    type: "splited"
+    dataIns:
+    - name: "original_str"
+      type: "string"
+      source: "task1_workflow/original"
+    dataOuts:
+    - name: "original_arr"
+      type: "collection"
+dataOuts:
+- name: "end_original_arr"
+  type: "collection"
+  source: "splited/original_arr"
